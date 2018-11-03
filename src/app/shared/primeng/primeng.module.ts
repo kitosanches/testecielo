@@ -11,6 +11,7 @@ import {MessageModule} from 'primeng/message';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {CardModule} from 'primeng/card';
 import {DataViewModule} from 'primeng/dataview';
+import {CarouselModule} from 'primeng/carousel';
 
 @NgModule({
   imports: [
@@ -25,8 +26,8 @@ import {DataViewModule} from 'primeng/dataview';
     MessageModule,
     ConfirmDialogModule,
     CardModule,
-    DataViewModule
-
+    DataViewModule,
+    CarouselModule
   ],
   declarations: [],
   exports:  [
@@ -40,7 +41,8 @@ import {DataViewModule} from 'primeng/dataview';
     MessageModule,
     ConfirmDialogModule,
     CardModule,
-    DataViewModule
+    DataViewModule,
+    CarouselModule
   ]
 })
 export class PrimengModule { }

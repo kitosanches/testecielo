@@ -1,6 +1,7 @@
 import { CategoriaModel } from './categoria.model';
 import { CategoriaService } from './categoria.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-categoria',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
   categorias: CategoriaModel[];
-  constructor(private categoriaService: CategoriaService) { }
+  constructor(private categoriaService: CategoriaService, private router: Router) { }
 
   ngOnInit() {
     this.buscarCategorias();
@@ -17,8 +18,13 @@ export class CategoriaComponent implements OnInit {
   buscarCategorias() {
     this.categoriaService.buscarCategorias().subscribe((resposta)=> {
       this.categorias = resposta;
-      console.log(this.categorias);
     });
   }
-
+  selecionarCategoria(categoria: CategoriaModel) {
+    this.router.navigate(['/categorias/produtos'], {
+      queryParams: {
+        idCategoria: categoria.id
+      }
+    });
+  }
 }

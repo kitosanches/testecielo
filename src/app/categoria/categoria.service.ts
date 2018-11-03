@@ -11,6 +11,6 @@ export class CategoriaService {
     return this.http.get<any[]>(`${this.urlGetCategorias}`);
   }
   buscarCategoria(id: number) {
-    return this.http.get<any[]>(`${this.urlGetCategorias}/${id}`);
+    return this.http.get<any>(`${this.urlGetCategorias}/${id}`);
   }
 }

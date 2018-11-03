@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+.tela-centralizar {
+    margin: 25px auto 20px auto;
+    width: 85%;
+    min-height: 80vh;
+    padding: 2em;
+    display: flex;    
+    position: relative;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+.titulo {
+    font-size: 14px;
+    font-weight: bold;
+}
+.margem-baixo {
+    margin-bottom: 5%;
+}
+.tamanho-card {
+    width: 100%;
+}
+.ui-carousel .ui-carousel-header  {
+    background-color: lightblue !important;
+}
+.ui-dataview .ui-dataview-header{
+    background-color: #007ad9 !important;
+    border: 1px solid #007ad9 !important;
+}
+.ui-dataview .ui-paginator-bottom {
+    background-color: lightblue !important;
+}
+.ui-tabmenu .ui-tabmenu-nav {
+    background-color: lightblue !important;
+}

@@ -1,3 +1,35 @@
-<p>
-  produto works!
-</p>
+
+<p-card class="tamanho-card">
+    <div class="margem-baixo">
+        <span class="titulo">
+            {{categoria.nome}}
+        </span>
+    </div>
+
+    <div class="margem-baixo">
+            <span>
+                Lista de Produtos Disponíveis
+            </span>
+        </div>
+        <div class="margem-baixo">
+                <p-carousel [value]="categoria.produtos" numVisible="1" autoplayInterval="5000">
+                        <ng-template let-produto pTemplate="item">
+                            <div class="ui-grid ui-grid-responsive">
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-6">Nome</div>
+                                    <div class="ui-grid-col-6">{{produto.nome}}</div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-6">Preço</div>
+                                    <div class="ui-grid-col-6">{{produto.preco | currency:'BRL':true:'2.2-2'}}</div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+        </div>
+        
+            <div>
+                <button pButton type="button" label="Voltar" (click)="voltar()"></button>
+            </div>
+
+</p-card>

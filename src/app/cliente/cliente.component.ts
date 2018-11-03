@@ -1,3 +1,5 @@
+import { ClienteModel } from './cliente.model';
+import { ClienteService } from './cliente.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit {
-
-  constructor() { }
+  clientes: ClienteModel[];
+  
+  constructor(private clienteService: ClienteService) { }
 
   ngOnInit() {
+    this.buscarClientes();
+  }
+  buscarClientes() {
+    this.clienteService.buscarClientes().subscribe((resposta)=> {
+      this.clientes = resposta;
+    });
   }
 
 }
