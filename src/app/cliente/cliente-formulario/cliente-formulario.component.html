@@ -1,15 +1,55 @@
-<div>
-  <form [formGroup]="clienteFormGroup">
-    <div class="margem-baixo">
-      <span>
-        Torne-se um cliente 
-      </span>
-    </div>
+<p-toast position="top-right" class="posicao-mensagem "></p-toast>
+<p-card class="tamanho-card">
+  <form name="clienteForm" role="form" novalidate #clienteForm="ngForm"> 
     <div class="margem-baixo">
       <span class="titulo">
         Formulário do Cliente
       </span>
     </div>
-    
+    <div class="ui-grid ui-grid-responsive">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">Nome*</div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText size="50" placeholder="Nome" [(ngModel)]="cliente.nome" name="nome"
+          required>
+        </div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">Email*</div>
+        <div class="ui-grid-col-6">
+          <input type="text" pInputText size="50" placeholder="Email" [(ngModel)]="cliente.email" name="email"
+          pKeyFilter="email" required>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">Tipo de Pessoa*</div>
+        <div class="ui-grid-col-6">
+          <p-toggleButton onLabel="Pessoa-Física" offLabel="Pessoa-Jurídica" (onChange)="mudarTipo($event)" name="tipo" [(ngModel)]="tipoPessoa"></p-toggleButton>
+        </div>
+      </div>
+      <div class="ui-grid-row margem-baixo" *ngIf="tipoPessoa">
+        <div class="ui-grid-col-6">CPF*</div>
+        <div class="ui-grid-col-6">
+          <p-inputMask  size="50" placeholder="CPF" [(ngModel)]="cliente.cpfOuCnpj" name="cpf"
+          pKeyFilter="pnum" mask="999.999.999-99" required></p-inputMask>
+        </div>
+      </div>
+      <div class="ui-grid-row margem-baixo" *ngIf="!tipoPessoa">
+        <div class="ui-grid-col-6">CNPJ*</div>
+        <div class="ui-grid-col-6">
+          <p-inputMask size="50" placeholder="CNPJ" [(ngModel)]="cliente.cpfOuCnpj" name="cnpj"
+          pKeyFilter="pnum" mask="99.999.999/9999-99"> </p-inputMask>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">
+          <button pButton type="button" label="Cadastrar" (click)="cadastrarCliente()"
+          [disabled]="clienteForm.form.invalid" ></button>
+        </div>
+
+      </div>
+    </div>
+
   </form>
-</div>
+</p-card>

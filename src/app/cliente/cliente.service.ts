@@ -1,3 +1,4 @@
+import { ClienteModel } from './cliente.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,5 +12,8 @@ export class ClienteService {
   
   buscarClientes() {
     return this.http.get<any[]>(`${this.urlGetClientes}`);
+  }
+  cadastrarClientes(cliente: ClienteModel) {
+    return this.http.post<any>(`${this.urlGetClientes}`, cliente);
   }
 }

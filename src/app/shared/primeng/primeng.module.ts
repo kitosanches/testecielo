@@ -12,6 +12,11 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {CardModule} from 'primeng/card';
 import {DataViewModule} from 'primeng/dataview';
 import {CarouselModule} from 'primeng/carousel';
+import {ToggleButtonModule} from 'primeng/togglebutton';
+import {TooltipModule} from 'primeng/tooltip';
+import {InputMaskModule} from 'primeng/inputmask';
+import {KeyFilterModule} from 'primeng/keyfilter';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   imports: [
@@ -27,7 +32,12 @@ import {CarouselModule} from 'primeng/carousel';
     ConfirmDialogModule,
     CardModule,
     DataViewModule,
-    CarouselModule
+    CarouselModule,
+    ToggleButtonModule,
+    TooltipModule,
+    InputMaskModule,
+    KeyFilterModule,
+    ToastModule
   ],
   declarations: [],
   exports:  [
@@ -42,7 +52,12 @@ import {CarouselModule} from 'primeng/carousel';
     ConfirmDialogModule,
     CardModule,
     DataViewModule,
-    CarouselModule
+    CarouselModule,
+    ToggleButtonModule,
+    TooltipModule,
+    InputMaskModule,
+    KeyFilterModule,
+    ToastModule
   ]
 })
 export class PrimengModule { }

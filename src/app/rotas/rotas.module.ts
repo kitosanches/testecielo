@@ -1,3 +1,4 @@
+import { ClienteFormularioComponent } from './../cliente/cliente-formulario/cliente-formulario.component';
 import { ProdutoComponent } from './../produto/produto.component';
 import { CategoriaComponent } from '../categoria/categoria.component';
 import { HomeComponent } from '../home/home.component';
@@ -13,7 +14,8 @@ const rotasHome : Routes = [
   {
     path: 'categorias/produtos', component: ProdutoComponent
   },
-  {path: 'clientes', component: ClienteComponent}
+  {path: 'clientes', component: ClienteComponent},
+  {path: 'novo-clientes', component: ClienteFormularioComponent}
 ];
 
 @NgModule({
